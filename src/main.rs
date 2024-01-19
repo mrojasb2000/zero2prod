@@ -5,6 +5,7 @@ async fn greet(req: HttpRequest) -> impl Responder {
     format!("Hello {}!", &name)
 }
 
+//noinspection RsMainFunctionNotFound
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     HttpServer::new(|| {
