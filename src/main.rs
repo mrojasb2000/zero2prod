@@ -1,6 +1,6 @@
 use actix_web::{web, App, HttpRequest, HttpServer, Responder, HttpResponse};
 
-async fn health_check(_req: HttpRequest) -> impl Responder {
+async fn health_check() -> impl Responder {
     HttpResponse::Ok()
 }
 
