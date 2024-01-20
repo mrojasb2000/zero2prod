@@ -1,17 +1,8 @@
-use actix_web::{web, App, HttpServer, Responder, HttpResponse};
+//! main.rs
 
-async fn health_check() -> impl Responder {
-    HttpResponse::Ok()
-}
+use zero2prod::run;
 
-//noinspection RsMainFunctionNotFound
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    HttpServer::new(|| {
-        App::new()
-            .route("/healthcheck", web::get().to(health_check))
-    })
-    .bind("127.0.0.1:8000")?
-    .run()
-    .await
+    run().await
 }
